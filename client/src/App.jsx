@@ -4,12 +4,24 @@ function App() {
   const [task, setTask] = useState("");
   const [advice, setAdvice] = useState("");
 
-  const getAdvice = () => {
-    if (!task) return;
+  const getAdvice = async () => {
+  if (!task.trim()) return;
 
-    // Temporary placeholder AI response
-    setAdvice(`To stay productive while "${task}", try working in focused 25 minute intervals with short breaks.`);
-  };
+  setAdvice("Loading...");
+
+  try {
+    const res = await fetch("http://localhost:5000/api/advice", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ task })
+    });
+
+    const data = await res.json();
+    setAdvice(data.advice);
+  } catch (err) {
+    setAdvice("Could not reach server. Make sure the backend is running.");
+  }
+};
 
   return (
     <div style={{fontFamily:"Arial", padding:"40px"}}>
