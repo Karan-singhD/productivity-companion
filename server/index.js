@@ -28,7 +28,7 @@ async function pickModel() {
     const data = await r.json();
 
     if (!data.models || !Array.isArray(data.models)) {
-      console.error("❌ Could not list models. Response:", data);
+      console.error(" Could not list models. Response:", data);
       return;
     }
 
@@ -40,7 +40,7 @@ async function pickModel() {
       null;
 
     if (!preferred) {
-      console.error("❌ No Gemini models found for this key.");
+      console.error(" No Gemini models found for this key.");
       return;
     }
 
@@ -48,7 +48,7 @@ async function pickModel() {
     pickedModelName = preferred.replace("models/", "");
     console.log("✅ Picked Gemini model:", pickedModelName);
   } catch (e) {
-    console.error("❌ Failed to pick model:", e?.message || e);
+    console.error("Failed to pick model:", e?.message || e);
   }
 }
 

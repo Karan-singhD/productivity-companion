@@ -22,7 +22,7 @@ function App() {
     setAdvice("Could not reach the server. Make sure backend is running.");
   }
 };
-// Basic UI for input and displaying advice
+// Basic UI for input and displaying advice and Formating  
   return (
     <div style={{fontFamily:"Arial", padding:"40px"}}>
       <h1>Productivity Companion</h1>
@@ -37,7 +37,7 @@ function App() {
       />
 
       <br/><br/>
-      // Formating and output for the advice test 
+      
       <button onClick={getAdvice} style={{padding:"10px 20px"}}>
         Get Advice
       </button>
