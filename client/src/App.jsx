@@ -45,7 +45,9 @@ function App() {
       {advice && (
         <div style={{marginTop:"20px"}}>
           <h3>Advice:</h3>
-          <p>{advice}</p>
+          <div style={{ whiteSpace: "pre-wrap" }}>
+          {advice}
+          </div>
         </div>
       )}
     </div>
