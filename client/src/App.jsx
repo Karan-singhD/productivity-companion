@@ -13,13 +13,13 @@ function App() {
     const res = await fetch("http://localhost:5000/api/advice", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ task })
+      body: JSON.stringify({ task }),
     });
 
     const data = await res.json();
     setAdvice(data.advice);
-  } catch (err) {
-    setAdvice("Could not reach server. Make sure the backend is running.");
+  } catch (e) {
+    setAdvice("Could not reach the server. Make sure backend is running.");
   }
 };
 
