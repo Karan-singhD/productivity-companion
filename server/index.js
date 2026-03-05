@@ -83,7 +83,7 @@ app.post("/api/advice", async (req, res) => {
     const model = genAI.getGenerativeModel({ model: pickedModelName });
 
     const prompt = `You are a productivity coach.
-Give concise, practical advice in 3 bullet points (max 60 words total), unless otherwise specifally specified by the user.
+Give concise, practical advice in 3 bullet points (max 200 words total), unless otherwise specifally specified by the user.
 Task: ${task}`;
 
     const result = await model.generateContent(prompt);
