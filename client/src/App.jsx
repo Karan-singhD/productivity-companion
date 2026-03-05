@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+// basic react app with an input for a task and a button to get advice
 function App() {
   const [task, setTask] = useState("");
   const [advice, setAdvice] = useState("");
@@ -22,7 +22,7 @@ function App() {
     setAdvice("Could not reach the server. Make sure backend is running.");
   }
 };
-
+// Basic UI for input and displaying advice
   return (
     <div style={{fontFamily:"Arial", padding:"40px"}}>
       <h1>Productivity Companion</h1>
@@ -37,7 +37,7 @@ function App() {
       />
 
       <br/><br/>
-
+      // Formating and output for the advice test 
       <button onClick={getAdvice} style={{padding:"10px 20px"}}>
         Get Advice
       </button>
