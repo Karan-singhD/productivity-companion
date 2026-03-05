@@ -17,7 +17,7 @@ function App() {
     });
 
     const data = await res.json();
-    setAdvice(data.advice);
+    setAdvice(data.advice.replace(/\*\*/g, ""));
   } catch (e) {
     setAdvice("Could not reach the server. Make sure backend is running.");
   }
